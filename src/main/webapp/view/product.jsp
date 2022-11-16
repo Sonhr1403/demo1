@@ -35,7 +35,7 @@
                 <td>${p.name}</td>
                 <td><img src="${p.img}" height="200" width="350" alt="aries"></td>
                 <td>${p.price}</td>
-                <td><a type="button" href="/edit/${p.id}" class="btn btn-warning">Edit</a></td>
+                <td><a type="button" href="/edit?id=${p.id}" class="btn btn-warning">Edit</a></td>
                 <td><a type="button" href="#" onclick="showMess(${p.id})" class="btn btn-danger">Delete</a></td>
 <%--                <td><a type="button" href="/cart?id=${p.id}" class="btn btn-success">Add to Cart</a></td>--%>
             </tr>

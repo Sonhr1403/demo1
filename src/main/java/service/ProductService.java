@@ -15,10 +15,10 @@ public class ProductService {
     }
 
     public void delete(int id){
-        products.remove(findByid(id));
+        products.remove(findiByid(id));
     }
 
-    public int findByid(int id){
+    public int findiByid(int id){
         for (int i = 0; i < products.size(); i++) {
             if(products.get(i).getId() == id){
                 return i ;
@@ -26,9 +26,17 @@ public class ProductService {
         }
         return -1;
     }
+    public Product findproductByid(int id){
+        for (int i = 0; i < products.size(); i++) {
+            if(products.get(i).getId() == id){
+                return products.get(i) ;
+            }
+        }
+        return null;
+    }
 
     public void edit(int id, Product product){
-        int index = findByid(id);
+        int index = findiByid(id);
         if(index != -1){
             products.set(index, product);
         }

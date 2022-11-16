@@ -23,16 +23,16 @@ public class ProductController {
         return modelAndView;
     }
 
-    @GetMapping("/edit/id")
-    public ModelAndView editPage(@PathVariable int id){
+    @GetMapping("/edit")
+    public ModelAndView editPage(int id){
         ModelAndView modelAndView = new ModelAndView("edit");
-        modelAndView.addObject("p", productService.findByid(id));
+        modelAndView.addObject("p", productService.findproductByid(id));
         return modelAndView;
     }
 
     @PostMapping("/editsp")
     public ModelAndView editProduct(@ModelAttribute Product product){
-        ModelAndView modelAndView = new ModelAndView("/redirect:/show");
+        ModelAndView modelAndView = new ModelAndView("redirect:/show");
         productService.edit(product.getId(),product);
         return modelAndView;
     }
@@ -47,7 +47,7 @@ public class ProductController {
     @GetMapping("/delete/id")
     public ModelAndView deleteProduct(@PathVariable int id){
         ModelAndView modelAndView = new ModelAndView("redirect:/show");
-        productService.delete(productService.findByid(id));
+        productService.delete(productService.findiByid(id));
         return modelAndView;
     }
 }
